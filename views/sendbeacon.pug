@@ -1,0 +1,12 @@
+html
+  head
+    title= title
+  body
+    h1 Navigator sendbeacon
+  script.
+    function sendData() {
+      var data = new FormData();
+      data.append('data', 'test')
+      navigator.sendBeacon('/collect_data_via_beacon', data);
+    }
+    window.addEventListener('unload', sendData, false);

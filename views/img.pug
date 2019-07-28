@@ -1,0 +1,12 @@
+html
+  head
+    title= title
+  body
+    h1 create fake image
+  script.
+    function collectData() {
+      var img = new Image();
+      img.src = 'http://localhost:3000/fake_image?data=test';
+      document.body.append(img);
+    }
+    window.addEventListener('unload', collectData, false);
